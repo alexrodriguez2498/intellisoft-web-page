@@ -20,7 +20,7 @@ export const Section = styled.section`
   & .text {
     margin: 1rem 0;
   }
-`;
+`;t push -u origin main
 export const BannerTextOne = styled.h1`
   margin: 0;
   display: flex;
