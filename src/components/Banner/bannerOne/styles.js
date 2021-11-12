@@ -21,7 +21,6 @@ export const Section = styled.section`
     margin: 1rem 0;
   }
 `;
-
 export const BannerTextOne = styled.h1`
   margin: 0;
   display: flex;
