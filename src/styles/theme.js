@@ -4,8 +4,8 @@ export default {
     code: "Roboto Mono, monospace"
   },
   colors: {
-    yellow: "F79416",
-    blue: "005AA6",
-    gray: "676363",
-  }
+    yellow: "#F79416",
+    blue: "#005AA6",
+    gray: "#676363",
+  },
 }

@@ -11,6 +11,11 @@ import {
   Row,
 } from 'reactstrap'
 import { BannerOne } from "../components/Banner/bannerOne"
+import { BrandsSectionOne, Index } from "../components/Brands"
+import { BannerTwo } from "../components/Banner/BannerTwo"
+import { Services } from "../components/Services"
+import { BannerThree } from "../components/Banner/BannerThree"
+import { Testimonials } from "../components/Testomonials"
 
 const IndexPage = () => (
   <>
@@ -18,17 +23,11 @@ const IndexPage = () => (
     <Layout>
       <Seo title="Home" />
       <BannerOne />
-      <h1>Hi people</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
-      <StaticImage
-        src="../images/gatsby-astronaut.png"
-        width={300}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt="A Gatsby astronaut"
-        style={{ marginBottom: `1.45rem` }}
-      />
+      <BrandsSectionOne />
+      <BannerTwo />
+      <Services />
+      <BannerThree />
+      <Testimonials />
       <ExampleScroll />
     </Layout>
   </>

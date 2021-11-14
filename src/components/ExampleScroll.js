@@ -13,9 +13,9 @@ const data = [
 export const ExampleScroll = () => {
   return (
     <div>
-      {data.map((block, key) => (
-        <Element key={key} style={{height: '1000px'}} name={`container${key}`}>
-          {`${block.name} ${key}`}
+      {data.map((block, index) => (
+        <Element key={index} style={{height: '1000px'}} name={`container${index}`}>
+          {`${block.name} ${index}`}
         </Element>
       ))}
     </div>
