@@ -16,6 +16,7 @@ import { BannerTwo } from "../components/Banner/BannerTwo"
 import { Services } from "../components/Services"
 import { BannerThree } from "../components/Banner/BannerThree"
 import { Testimonials } from "../components/Testomonials"
+import { ContactPreview } from "../components/ContactPreview"
 
 const IndexPage = () => (
   <>
@@ -28,6 +29,7 @@ const IndexPage = () => (
       <Services />
       <BannerThree />
       <Testimonials />
+      <ContactPreview />
       <ExampleScroll />
     </Layout>
   </>
