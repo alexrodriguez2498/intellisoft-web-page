@@ -3,16 +3,48 @@ import React, { useState } from 'react'
 import { Col, Container, Row, Form, FormGroup, Label, Input, Button, Tooltip } from 'reactstrap'
 import  { Section } from './styles'
 import { GrCircleInformation } from '@react-icons/all-files/gr/GrCircleInformation'
+import withReactContent from 'sweetalert2-react-content'
+import Swal from 'sweetalert2'
+import { Element } from 'react-scroll'
 
 export const ContactPreview = () => {
 const [isOpen, setIsOpen] = useState(false);
+const [name, setName] = useState('');
+const [email, setEmail] = useState('');
+const [comment, setComment] = useState('');
+const [nda, setNda] = useState(false);
 
 const showTooltip = () => {
     setIsOpen(!isOpen)
 }
 
+
+const submitInfo = (e) => {
+    const Modal = withReactContent(Swal)
+
+
+    Modal.fire({
+        icon: 'success',
+        text: 'Good, we will contact you as soon as posible!',
+        showConfirmButton: false,
+        timer: 2500
+    })
+    e.preventDefault();
+    //  console.log({
+    //     name: name,
+    //     email: email,
+    //     comment: comment,
+    //     nda: nda
+    // })
+    setName('')
+    setEmail('')
+    setComment('')
+    setNda(false) 
+}
+
     return (
-        <Section>
+        <Element name="contact" style={{padding: '1rem 0'}}>
+             <Section>
             <Container>
                 <Row>
                     <Col xs={12} md={{offset: 1, size: 10}}  className="contact-container">
@@ -27,6 +59,8 @@ const showTooltip = () => {
                                             Your Name
                                             </Label>
                                             <Input
+                                            value={name}
+                                            onInput={e => setName(e.target.value)}
                                             id="name"
                                             name="name"
                                             type="text"
@@ -37,6 +71,8 @@ const showTooltip = () => {
                                         Your Email
                                         </Label>
                                         <Input
+                                         value={email}
+                                        onInput={e => setEmail(e.target.value)}
                                         id="email"
                                         name="email"
                                         type="email"
@@ -47,13 +83,18 @@ const showTooltip = () => {
                                         Your Comment
                                         </Label>
                                         <Input
+                                         value={comment}
+                                        onInput={e => setComment(e.target.value)}
                                         id="comment"
                                         name="comment"
                                         type="textarea"
                                         />
                                     </FormGroup>
                                      <FormGroup check>
-                                        <Input type="checkbox" />
+                                        <Input 
+                                        value={nda}
+                                        onInput={e => setNda(e.target.checked)}
+                                        type="checkbox" />
                                         {' '}
                                         <Label check>
                                         I want to sign an NDA first
@@ -76,7 +117,9 @@ const showTooltip = () => {
                                         </Tooltip> 
                                     </FormGroup>
                                   
-                                    <Button className="submit-button" disabled>
+                                    <Button className="submit-button"
+                                     disabled={name === '' || email == '' || comment === ''} 
+                                      onClick={submitInfo}>
                                         Submit
                                     </Button>
                                 </Form>
@@ -94,6 +137,8 @@ const showTooltip = () => {
                 </Row>
             </Container>
         </Section>
-       
+     
+         </Element>
+         
     )
 }

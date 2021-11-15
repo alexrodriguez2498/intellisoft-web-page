@@ -12,6 +12,7 @@ import { NavbarVersionOne } from './Navbar/NavbarVersionOne';
 
 import Header from "./header"
 import "./layout.css"
+import { Footer } from "./Footer";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -30,15 +31,7 @@ const Layout = ({ children }) => {
       <NavbarVersionOne />
       <div>
         <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+        <Footer />
       </div>
     </>
   )

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Section } from './styles'
 import {
   Row,
@@ -7,9 +7,13 @@ import {
 } from 'reactstrap'
 import { StaticImage } from "gatsby-plugin-image"
 
+
+
 export const BannerTwo = () => {
+  
   return (
     <Section>
+
       <Container>
         <Row className={'d-flex align-items-center'}>
           <Col xs={12} md={6}>
@@ -37,5 +41,3 @@ export const BannerTwo = () => {
     </Section>
   )
 }
-
-

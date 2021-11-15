@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Section = styled.section`
-  margin: 3rem 0 ;
+  margin: 9rem 0 ;
   
   & h1 {
     text-align: center;

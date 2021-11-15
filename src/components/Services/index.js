@@ -3,6 +3,7 @@ import { Col, Row, Container } from "reactstrap"
 import { Section } from './styles'
 import { useSpring, animated } from "react-spring"
 import { StaticImage } from "gatsby-plugin-image"
+import { Element } from 'react-scroll'
 
 const services = [
   {text: 'Software Development', view: 1},
@@ -16,12 +17,18 @@ const services = [
 ]
 
 export const Services = () => {
+  const [appear, setAppear] = useState(false);
   const [view, setView] = useState(1);
   const fade = useSpring({
     to: { opacity: 1 },
     from: { opacity: 0 },
     reset: true,
   })
+
+  const changeState = () => {
+    setAppear(true);
+    console.log('i am changing');
+  }
 
   useEffect(() => {
     setView(1);
@@ -538,7 +545,8 @@ export const Services = () => {
   }
 
   return (
-    <Section>
+    <Element name="services" style={{padding: '1rem 0'}}>
+      <Section>
       <Container>
         <h1>Our Services</h1>
         <Row>
@@ -559,6 +567,7 @@ export const Services = () => {
         </Row>
       </Container>
     </Section>
+    </Element>
+    
   )
 }
-

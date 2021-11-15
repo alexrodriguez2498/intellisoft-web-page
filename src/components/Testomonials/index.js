@@ -1,10 +1,14 @@
 import React from "react"
 import { Col, Container, Row } from "reactstrap"
 import { StaticImage } from "gatsby-plugin-image"
+import { Element } from "react-scroll"
+import { Section } from "./styles"
 
 export const Testimonials = () => {
   return (
-    <Container style={{position: 'relative'}}>
+    <Element name="testimonies" style={{padding: '1rem 0'}}>
+       <Section>
+         <Container style={{position: 'relative'}}>
       <StaticImage
         src={'../../images/quotes.png'}
         alt={'quotes image'}
@@ -137,6 +141,8 @@ export const Testimonials = () => {
         </Col>
       </Row>
     </Container>
+       </Section>
+     </Element>
+   
   )
 }
-

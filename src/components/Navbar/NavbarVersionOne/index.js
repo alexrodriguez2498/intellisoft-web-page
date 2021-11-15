@@ -4,11 +4,11 @@ import { StaticImage } from "gatsby-plugin-image"
 import { animateScroll as scroll, Link } from "react-scroll"
 
 const navLinks = [
-  { text: "Services", url: "container0" },
+  { text: "Services", url: "services" },
   { text: "Work", url: "container1" },
-  { text: "Expertise", url: "container2" },
-  { text: "About Us", url: "container3" },
-  { text: "Contact", url: "container4" }
+  { text: "Expertise", url: "expertise" },
+  { text: "About Us", url: "testimonies" },
+  { text: "Contact", url: "contact" }
 ]
 
 export const NavbarVersionOne = () => {
