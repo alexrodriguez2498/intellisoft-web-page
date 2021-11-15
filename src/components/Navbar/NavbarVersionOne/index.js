@@ -14,13 +14,16 @@ const navLinks = [
 export const NavbarVersionOne = () => {
   const [fixedNavbar, setFixedNavbar] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
-
+  const isBrowser = () => typeof window !== "undefined"
 
   const changeNavbarPosition = () => {
-    if (window.scrollY >= 100) {
+    
+    if (isBrowser()) {
+        if (window.scrollY >= 100) {
       setFixedNavbar(true)
     } else {
       setFixedNavbar(false)
+    }
     }
   }
 
@@ -32,7 +35,9 @@ export const NavbarVersionOne = () => {
     setIsOpen(!isOpen)
   }
 
-  window.addEventListener("scroll", changeNavbarPosition)
+  if (isBrowser()) {
+    window.addEventListener("scroll", changeNavbarPosition)
+  }
 
   return (
     <CustomNav background={fixedNavbar ? "white" : "transparent"}>

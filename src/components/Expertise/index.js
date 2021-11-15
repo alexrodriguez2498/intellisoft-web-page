@@ -259,7 +259,7 @@ export const Expertise = () => {
                  height={100}
                 placeholder="blurred" 
                  />
-                <StaticImage src="../../images/js.png" 
+                <StaticImage src="../../images/js-logo.png" 
                 alt="javascript logo"
                  width={100}
                  height={100}
@@ -277,7 +277,7 @@ export const Expertise = () => {
                  height={100}
                 placeholder="blurred" 
                  />
-                <StaticImage src="../../images/phantom-logo.png" 
+                <StaticImage src="../../images/phantomjs.png" 
                 alt="phantom js logo"
                  width={100}
                  height={100}

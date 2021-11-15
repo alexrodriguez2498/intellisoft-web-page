@@ -33,7 +33,7 @@ export const BrandsSectionOne = () => {
                 <StaticImage src="../../images/random-logo.png" alt="" width={200}  className={'logo-image'}/>
               </li>
               <li>
-                <StaticImage src="../../images/twitch.png" alt="" width={200}  className={'logo-image'}/>
+                <StaticImage src="../../images/twich.png" alt="" width={200}  className={'logo-image'}/>
               </li>
               <li>
                 <StaticImage src="../../images/google-logo.png" alt="" width={200}  className={'logo-image'}/>
@@ -51,7 +51,7 @@ export const BrandsSectionOne = () => {
                 <StaticImage src="../../images/random-logo.png" alt="" width={200}  className={'logo-image'}/>
               </li>
               <li>
-                <StaticImage src="../../images/twitch.png" alt="" width={200}  className={'logo-image'}/>
+                <StaticImage src="../../images/twich.png" alt="" width={200}  className={'logo-image'}/>
               </li>
               <li>
                 <StaticImage src="../../images/google-logo.png" alt="" width={200}  className={'logo-image'}/>
@@ -69,7 +69,7 @@ export const BrandsSectionOne = () => {
                 <StaticImage src="../../images/random-logo.png" alt="" width={200}  className={'logo-image'}/>
               </li>
               <li>
-                <StaticImage src="../../images/twitch.png" alt="" width={200}  className={'logo-image'}/>
+                <StaticImage src="../../images/twich.png" alt="" width={200}  className={'logo-image'}/>
               </li>
             </List>
           </div>
