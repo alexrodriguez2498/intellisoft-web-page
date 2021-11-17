@@ -7,34 +7,46 @@ export const Section = styled.section`
     text-align: center;
   }
   
+  & .special-list {
+    list-style-type: none;
+    @media (max-width: 600px) {
+      overflow: auto;
+      display: flex;
+    }
+  }
+  
   & ul {
     list-style-type: none;
   }
   & .service-link {
     font-weight: bold;
     padding: .5rem;
+    @media (max-width: 600px) {
+      width: 10rem;
+      text-align: center;
+    }
 
     &:hover {
       cursor: pointer;
       color: ${props => props.theme.colors.yellow};
       transform: scale(1.1);
       transition: all .2s ease-in-out;
-      &::before {
-        content: '-';
-        width: 1rem;
-        margin-right: .1rem;
-      }
+      //&::before {
+      //  content: '-';
+      //  width: 1rem;
+      //  margin-right: .1rem;
+      //}
     }
   }
 
   & .active-link {
     color: ${props => props.theme.colors.yellow};
     transform: scale(1.1);
-    &::before {
-      content: '-';
-      width: 1rem;
-      margin-right: .1rem;
-    }
+    //&::before {
+    //  content: '-';
+    //  width: 1rem;
+    //  margin-right: .1rem;
+    //}
   }
   
   & .link-section {

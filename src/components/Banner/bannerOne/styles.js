@@ -8,10 +8,16 @@ export const Section = styled.section`
   }
   & .text {
     margin: 1rem 0;
+    @media (max-width: 600px) {
+      text-align: center;
+    }
   }
   & .yellow-text {
     color: #F79416;
     margin: 0;
+    @media (max-width: 600px) {
+      text-align: center;
+    }
   }
 `;
 
@@ -19,6 +25,9 @@ export const BannerTextOne = styled.h1`
   margin: 0;
   display: flex;
   align-items: center;
+  @media (max-width: 600px) {
+    text-align: center;
+  }
 `;
 
 export const FilledButton = styled.button`
@@ -28,6 +37,9 @@ export const FilledButton = styled.button`
   font-weight: bold;
   background-color: ${props => props.theme.colors.yellow};
   border: 1px solid ${props => props.theme.colors.yellow};
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 export const OutlinedButton = styled.button`
@@ -38,6 +50,9 @@ export const OutlinedButton = styled.button`
   color: ${props => props.theme.colors.blue};
   font-weight: bold;
   border: 1px solid ${props => props.theme.colors.blue};
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 

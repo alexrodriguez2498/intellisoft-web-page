@@ -1,7 +1,8 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { CustomNav, LinksContainer, LogoContainer } from "./styles"
 import { StaticImage } from "gatsby-plugin-image"
 import { animateScroll as scroll, Link } from "react-scroll"
+import BurguerMenu from "../components/BurguerMenu"
 
 const navLinks = [
   { text: "Services", url: "services" },
@@ -13,19 +14,31 @@ const navLinks = [
 
 export const NavbarVersionOne = () => {
   const [fixedNavbar, setFixedNavbar] = useState(false)
+  const [responsiveNav, setResponsiveNav] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
   const isBrowser = () => typeof window !== "undefined"
 
   const changeNavbarPosition = () => {
-    
+
     if (isBrowser()) {
-        if (window.scrollY >= 100) {
-      setFixedNavbar(true)
-    } else {
-      setFixedNavbar(false)
-    }
+      if (window.scrollY >= 50) {
+        setFixedNavbar(true)
+      } else {
+        setFixedNavbar(false)
+      }
     }
   }
+
+  useEffect(() => {
+    if (isBrowser()) {
+      if (window.innerWidth < 800) {
+        console.log("repsonsive nav")
+        setResponsiveNav(true)
+      } else {
+        setResponsiveNav(false)
+      }
+    }
+  }, [])
 
   const scrollToTop = () => {
     scroll.scrollToTop()
@@ -50,16 +63,28 @@ export const NavbarVersionOne = () => {
           height={60}
         />
       </LogoContainer>
-      <LinksContainer>
-        {
-          navLinks.map((link, index) => (
-            <Link className="link" activeClass="active-link" to={link.url} spy={true} smooth={true} duration={500}
-                  key={index}>
-              {link.text}
-            </Link>
-          ))
-        }
-      </LinksContainer>
+      {
+        !responsiveNav && (
+          <LinksContainer>
+            {
+              navLinks.map((link, index) => (
+                <Link className="link" activeClass="active-link" to={link.url} spy={true} smooth={true} duration={500}
+                      key={index}>
+                  {link.text}
+                </Link>
+              ))
+            }
+          </LinksContainer>
+        )
+      }
+
+      {
+        responsiveNav && (
+          <div>
+            <BurguerMenu />
+          </div>
+        )
+      }
 
     </CustomNav>
   )

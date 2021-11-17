@@ -52,7 +52,7 @@ export const BannerOne = () => {
     <Section>
       <Container>
         <Row>
-          <Col xs={12} lg={6} className={"centered-column"}>
+          <Col xs={{ order: 2, size:12 }} lg={6} className={"centered-column"}>
             <BannerTextOne>Highly qualified experts in
               software development for </BannerTextOne>
             {doLoop()}
@@ -62,7 +62,7 @@ export const BannerOne = () => {
               <OutlinedButton>Contact us</OutlinedButton>
             </div>
           </Col>
-          <Col xs={12} lg={6}>
+          <Col xs={{ order: 1, size:12 }} lg={6}>
             <StaticImage
               src={"../../../images/banner-1.png"}
               alt={"banner image"}
