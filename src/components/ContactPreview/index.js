@@ -52,7 +52,7 @@ export const ContactPreview = () => {
                 <h1>
                   Contact us
                 </h1>
-                <Col xs={{order: 2}}>
+                <Col xs={{order: 2, size: 12}} lg={{order: 1, size: 6}}>
                   <Form>
                     <FormGroup>
                       <Label for="name">
@@ -124,7 +124,7 @@ export const ContactPreview = () => {
                     </Button>
                   </Form>
                 </Col>
-                <Col xs={{ order: 1 }}>
+                <Col xs={{ order: 1, size: 12 }} lg={{order: 2, size: 6}}>
                   <StaticImage
                     src="../../images/contact-us.png"
                     alt="contact us icon"

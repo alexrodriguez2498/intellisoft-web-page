@@ -14,6 +14,7 @@ import { BannerThree } from "../components/Banner/BannerThree"
 import { Testimonials } from "../components/Testomonials"
 import { ContactPreview } from "../components/ContactPreview"
 import { Expertise } from "../components/Expertise"
+import { Stats } from "../components/Stats"
 
 const IndexPage = () => (
   <div style={{overflowX: 'hidden'}}>
@@ -25,6 +26,7 @@ const IndexPage = () => (
       <BannerTwo />
       <Services />
       <BannerThree />
+      <Stats />
       <Expertise />
       <Testimonials />
       <ContactPreview />

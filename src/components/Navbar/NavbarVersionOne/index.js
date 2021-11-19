@@ -7,7 +7,6 @@ import BurguerMenu from "../components/BurguerMenu"
 const navLinks = [
   { text: "Services", url: "services" },
   { text: "Work", url: "container1" },
-  { text: "Expertise", url: "expertise" },
   { text: "About Us", url: "testimonies" },
   { text: "Contact", url: "contact" }
 ]

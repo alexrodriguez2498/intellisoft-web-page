@@ -24,9 +24,15 @@ export const Stats = () => {
     config: config.molasses,
   })
 
-  const award = useSpring({
+  const projects = useSpring({
     from: { number: 0 },
-    number: 100,
+    number: 1000,
+    delay: 200,
+    config: config.molasses,
+  })
+  const experience = useSpring({
+    from: { number: 0 },
+    number: 8,
     delay: 200,
     config: config.molasses,
   })
@@ -50,10 +56,17 @@ export const Stats = () => {
       </Stat>
       <Stat>
         <div className="d-flex">
-          <animated.h1>{award.number.to(n => n.toFixed(0))}</animated.h1>
-          <h1>k</h1>
+          <animated.h1>{projects.number.to(n => n.toFixed(0))}</animated.h1>
+          <h1>+</h1>
         </div>
-        <p>Lines of Code</p>
+        <p>Proyects Delivered</p>
+      </Stat>
+      <Stat>
+        <div className="d-flex">
+          <animated.h1>{experience.number.to(n => n.toFixed(0))}</animated.h1>
+          <h1>+</h1>
+        </div>
+        <p>Years of Experience</p>
       </Stat>
     </StatContainer>
   )

@@ -55,7 +55,7 @@ export const Footer = () => {
       <Container>
         <div className="border-top pb-5"></div>
         <Row className="mb-5">
-          <Col className="d-flex flex-column align-items-center">
+          <Col xs={12} md={6} lg={3} className='text-center' className="d-flex flex-column align-items-center">
             <StaticImage
               src="../../images/logo.png"
               alt="intellisoft logo"
@@ -71,8 +71,8 @@ export const Footer = () => {
               <GrInstagram fontSize={30} className="mx-2 social-icon" />
             </div>
           </Col>
-          <Col>
-            <h4>Services</h4>
+          <Col xs={12} md={6} lg={3} className='text-center'>
+            <h4 className='my-sm-5 mb-md-3'>Services</h4>
             <ul>
               {
                 servicesOne.map((service, index) => (
@@ -83,7 +83,7 @@ export const Footer = () => {
               }
             </ul>
           </Col>
-          <Col>
+          <Col xs={12} md={6} lg={3} className='text-center'>
             <h4>-</h4>
             <ul>
               {
@@ -95,7 +95,7 @@ export const Footer = () => {
               }
             </ul>
           </Col>
-          <Col>
+          <Col xs={12} md={6} lg={3} className='text-center'>
             <h4>-</h4>
             <ul>
               {
@@ -107,7 +107,7 @@ export const Footer = () => {
               }
             </ul>
           </Col>
-          <Col>
+          <Col xs={12} md={6} lg={3} className='text-center'>
             <h4>Knowledge </h4>
             <ul>
               {
@@ -121,14 +121,14 @@ export const Footer = () => {
           </Col>
         </Row>
         <Row className="mb-5">
-          <Col>
+          <Col xs={12} md={6} lg={3} className='text-center'>
             <h4> Drop us a line:</h4>
-            <div className="d-flex align-items-center">
+            <div className="d-flex align-items-center justify-content-center">
               <p className="mb-0 mx-3">hello@intellisoftpr.com</p>
               <BiMailSend fontSize={30} color="#005AA6" />
             </div>
           </Col>
-          <Col>
+          <Col xs={12} md={6} lg={3} className='text-center'>
             <h4> Headquarters</h4>
             <small>
               ul. Dolnych Wałów 8
@@ -136,7 +136,7 @@ export const Footer = () => {
               Poland
             </small>
           </Col>
-          <Col>
+          <Col xs={12} md={6} lg={3} className='text-center'>
             <h4> Sales & Marketing</h4>
             <small>
               ul. Celna 13/12
