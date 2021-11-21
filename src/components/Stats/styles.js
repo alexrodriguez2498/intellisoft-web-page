@@ -7,6 +7,7 @@ export const StatContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom:10rem;
 `;
 
 export const Stat = styled.div`
@@ -20,6 +21,13 @@ export const Stat = styled.div`
   & h1 {
     color: ${props => props.theme.colors.yellow};
     margin: 0;
+    font-size: 72px;
+    @media (max-width: 1200px) {
+      font-size: 60px;
+    }
+    @media (max-width: 1100px) {
+      font-size: 45px;
+    }
   }
   
   & p {

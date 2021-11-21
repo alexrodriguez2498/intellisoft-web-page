@@ -2,7 +2,9 @@ import React, { useState } from "react"
 import { Stat, StatContainer } from './styles'
 import { useSpring, config, animated } from "react-spring"
 
+
 export const Stats = () => {
+
   const days = useSpring({
     from: { number: 0 },
     number: 24,
