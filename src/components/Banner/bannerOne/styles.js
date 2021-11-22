@@ -32,7 +32,7 @@ export const BannerTextOne = styled.h1`
 `;
 
 export const FilledButton = styled.button`
-  padding: 1rem 0;
+  padding: 1rem ;
   margin: 0.5rem;
   border-radius: 5px;
   font-weight: bold;
@@ -49,7 +49,7 @@ export const FilledButton = styled.button`
 `;
 
 export const OutlinedButton = styled.button`
-  padding: 1rem 0;
+  padding: 1rem ;
   margin: 0.5rem;
   border-radius: 5px;
   background-color: white;
