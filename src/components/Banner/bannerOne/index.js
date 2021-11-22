@@ -3,6 +3,7 @@ import { BannerTextOne, FilledButton, OutlinedButton, Section } from "./styles"
 import { Col, Container, Row } from "reactstrap"
 import { StaticImage } from "gatsby-plugin-image"
 import { animated, useSpring } from "react-spring"
+import { Link } from "react-scroll"
 
 const texts = [
   { text: "Startups" },
@@ -52,17 +53,21 @@ export const BannerOne = () => {
     <Section>
       <Container>
         <Row>
-          <Col xs={{ order: 2, size:12 }} lg={{ order: 1, size: 6 }} className={"centered-column"}>
+          <Col xs={{ order: 2, size: 12 }} lg={{ order: 1, size: 6 }} className={"centered-column"}>
             <BannerTextOne>Highly qualified experts in
               software development for </BannerTextOne>
             {doLoop()}
             <p className={"text"}>Design. Development. Consultancy.</p>
             <div>
               <FilledButton>Quote your project Now!</FilledButton>
-              <OutlinedButton>Contact us</OutlinedButton>
+              <Link to="contact">
+                <OutlinedButton>
+                  Contact us
+                </OutlinedButton>
+              </Link>
             </div>
           </Col>
-          <Col xs={{ order: 1, size:12 }} lg={{ order: 2, size: 6 }}>
+          <Col xs={{ order: 1, size: 12 }} lg={{ order: 2, size: 6 }}>
             <StaticImage
               src={"../../../images/banner-1.png"}
               alt={"banner image"}

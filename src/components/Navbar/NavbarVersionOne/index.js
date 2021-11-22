@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from "react"
-import { CustomNav, LinksContainer, LogoContainer } from "./styles"
+import { CtoButton, CustomNav, LinksContainer, LogoContainer } from "./styles"
 import { StaticImage } from "gatsby-plugin-image"
 import { animateScroll as scroll, Link } from "react-scroll"
 import BurguerMenu from "../components/BurguerMenu"
+import { useTransition, config, animated } from 'react-spring'
 
 const navLinks = [
   { text: "Services", url: "services" },
-  { text: "Work", url: "container1" },
+  { text: "Work", url: "portfolio" },
   { text: "About Us", url: "testimonies" },
-  { text: "Contact", url: "contact" }
+  { text: "Contact", url: "contact" },
 ]
 
 export const NavbarVersionOne = () => {
   const [fixedNavbar, setFixedNavbar] = useState(false)
   const [responsiveNav, setResponsiveNav] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
+  const [show, set] = useState(false)
   const isBrowser = () => typeof window !== "undefined"
 
   const changeNavbarPosition = () => {
@@ -64,16 +66,19 @@ export const NavbarVersionOne = () => {
       </LogoContainer>
       {
         !responsiveNav && (
-          <LinksContainer>
-            {
-              navLinks.map((link, index) => (
-                <Link className="link" activeClass="active-link" to={link.url} spy={true} smooth={true} duration={500}
-                      key={index}>
-                  {link.text}
-                </Link>
-              ))
-            }
-          </LinksContainer>
+          <>
+            <LinksContainer>
+              {
+                navLinks.map((link, index) => (
+                  <Link className="link" activeClass="active-link" to={link.url} spy={true} smooth={true} duration={500}
+                        key={index}>
+                    {link.text}
+                  </Link>
+                ))
+              }
+            </LinksContainer>
+            <CtoButton> Let's talk!</CtoButton>
+          </>
         )
       }
 

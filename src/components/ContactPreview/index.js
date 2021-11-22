@@ -1,5 +1,5 @@
 import { StaticImage } from "gatsby-plugin-image"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Button, Col, Container, Form, FormGroup, Input, Label, Row, Tooltip } from "reactstrap"
 import { Section } from "./styles"
 import { GrCircleInformation } from "@react-icons/all-files/gr/GrCircleInformation"
@@ -18,28 +18,34 @@ export const ContactPreview = () => {
     setIsOpen(!isOpen)
   }
 
-
   const submitInfo = (e) => {
-    const Modal = withReactContent(Swal)
+    const Modal = withReactContent(Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    }))
 
 
     Modal.fire({
-      icon: "success",
-      text: "Good, we will contact you as soon as posible!",
-      showConfirmButton: false,
-      timer: 2500
+      icon: 'success',
+      title: 'Message sent successfully!'
     })
     e.preventDefault()
-    //  console.log({
-    //     name: name,
-    //     email: email,
-    //     comment: comment,
-    //     nda: nda
-    // })
     setName("")
     setEmail("")
     setComment("")
+    console.log(nda)
     setNda(false)
+    console.log(nda)
+    const checkBox = document.getElementById('checkbox')
+    if (nda) checkBox.click()
+    console.log(nda)
   }
 
   return (
@@ -92,6 +98,7 @@ export const ContactPreview = () => {
                     </FormGroup>
                     <FormGroup check>
                       <Input
+                        id='checkbox'
                         value={nda}
                         onInput={e => setNda(e.target.checked)}
                         type="checkbox" />

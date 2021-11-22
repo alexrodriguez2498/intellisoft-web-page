@@ -6,7 +6,7 @@ import { Col, Row } from "reactstrap"
 export const Expertise = () => {
   return (
     <Element name="testimonies" style={{ padding: "1rem 0" }}>
-      <Section>
+      <Section style={{margin: '0 1rem' }}>
         <h1>Why choose us?</h1>
         <p>
           We are expert offshore software development partner. Sofware development with Intellisoft is beyond a
