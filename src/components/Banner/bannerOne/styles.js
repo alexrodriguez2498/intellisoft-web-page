@@ -37,6 +37,11 @@ export const FilledButton = styled.button`
   font-weight: bold;
   background-color: ${props => props.theme.colors.yellow};
   border: 1px solid ${props => props.theme.colors.yellow};
+    &:hover {
+      transition: background-color ease-in .2s;
+      background-color: transparent;
+      color:  ${props => props.theme.colors.yellow};
+    }
   @media (max-width: 600px) {
     width: 100%;
   }
@@ -50,6 +55,11 @@ export const OutlinedButton = styled.button`
   color: ${props => props.theme.colors.blue};
   font-weight: bold;
   border: 1px solid ${props => props.theme.colors.blue};
+  &:hover {
+    transition: background-color ease-in .2s;
+    background-color: ${props => props.theme.colors.blue};
+    color:  white;
+  }
   @media (max-width: 600px) {
     width: 100%;
   }

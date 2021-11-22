@@ -6,8 +6,7 @@ import { Link } from "react-scroll"
 
 const navLinks = [
   { text: "Services", url: "services" },
-  { text: "Work", url: "container1" },
-  { text: "Expertise", url: "expertise" },
+  { text: "Work", url: "portfolio" },
   { text: "About Us", url: "testimonies" },
   { text: "Contact", url: "contact" }
 ]
@@ -26,6 +25,7 @@ const MenuPanel = styled.div`
     align-items: center;
     flex-direction: column;
     & ul {
+      text-align: center;
       list-style-type: none;
       margin: 2rem 0 0 0;
       & .active-link {
@@ -37,6 +37,15 @@ const MenuPanel = styled.div`
         font-size: 32px;
         color: black;
         text-decoration: none;
+      }
+      & button {
+        margin-top: 4rem; 
+        padding: 1rem;
+        border-radius: 5px;
+        border: 1px solid ${props => props.theme.colors.blue};
+        background-color: ${props => props.theme.colors.blue};
+        color: white;
+        width: 100%;
       }
     }
 
@@ -98,6 +107,11 @@ const Burger = () => {
                     </li>
                   ))
                 }
+                <li>
+                  <button>
+                    Let's Talk
+                  </button>
+                </li>
               </ul>
             </div>
           </MenuPanel>

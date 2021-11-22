@@ -3,6 +3,7 @@ import { CtoButton, CustomNav, LinksContainer, LogoContainer } from "./styles"
 import { StaticImage } from "gatsby-plugin-image"
 import { animateScroll as scroll, Link } from "react-scroll"
 import BurguerMenu from "../components/BurguerMenu"
+import { useTransition, config, animated } from 'react-spring'
 
 const navLinks = [
   { text: "Services", url: "services" },
@@ -15,6 +16,7 @@ export const NavbarVersionOne = () => {
   const [fixedNavbar, setFixedNavbar] = useState(false)
   const [responsiveNav, setResponsiveNav] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
+  const [show, set] = useState(false)
   const isBrowser = () => typeof window !== "undefined"
 
   const changeNavbarPosition = () => {

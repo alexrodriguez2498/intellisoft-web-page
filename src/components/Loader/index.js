@@ -61,7 +61,7 @@ export const Logo = ({ isViewed }) => {
   useEffect(() => {
     setTimeout(() => {
       setTimer(false)
-    }, 3500)
+    }, 1500)
   }, [])
 
 

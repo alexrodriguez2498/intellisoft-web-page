@@ -5,6 +5,7 @@ export const FooterSection = styled.footer`
      padding: 2rem 0;
 
     & ul {
+      margin-left: 0;
         list-style-type: none;
          & li {
              margin: 0;
@@ -31,4 +32,13 @@ export const FooterSection = styled.footer`
              }
          }
     }
+  
+  & .rights {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
+  }
 `;

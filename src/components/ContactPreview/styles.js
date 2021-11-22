@@ -8,12 +8,15 @@ export const Section = styled.section`
     }
      & .submit-button {
          background-color: ${props => props.theme.colors.blue};
+        border: 1px solid ${props => props.theme.colors.blue};
             
          &:hover {
-            background-color: ${props => props.theme.colors.yellow};
+           transition: background-color ease-in .2s;
+           background-color: transparent;
+            color: ${props => props.theme.colors.blue};
          }
          
-         &::focus {
+         &:focus {
             background-color: ${props => props.theme.colors.yellow};
          }
      }

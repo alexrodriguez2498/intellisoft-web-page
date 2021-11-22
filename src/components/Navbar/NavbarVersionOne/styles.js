@@ -9,6 +9,9 @@ export const CustomNav = styled.nav`
   width: 100%;
   z-index: 11;
   background-color: ${props => props.background};
+  @media (max-width: 700px) {
+    padding: 0;
+  }
 `;
 
 export const LogoContainer = styled.figure`
@@ -23,6 +26,12 @@ export const CtoButton = styled.button`
   background-color: ${props => props.theme.colors.blue};
   border: 1px solid ${props => props.theme.colors.blue};
   border-radius: 5px;
+    &:hover {
+      transition: background-color ease-in .2s ;
+      cursor: pointer;
+      background-color: white;
+      color: ${props => props.theme.colors.blue};
+    }
 `
 
 export const LinksContainer = styled.div`
@@ -35,6 +44,7 @@ export const LinksContainer = styled.div`
     margin: 0 1rem;
     border-radius: 5px;
      &:hover {
+       transition: background-color ease-in .2s ;
        cursor: pointer;
        background-color: ${props => props.theme.colors.yellow};
      }
@@ -43,7 +53,7 @@ export const LinksContainer = styled.div`
     justify-self: end;
   }
   & .active-link {
-    border: 1px solid ${props => props.theme.colors.yellow};
+    background-color: ${props => props.theme.colors.yellow};
   }
 `;
 

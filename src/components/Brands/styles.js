@@ -1,18 +1,12 @@
 import styled, { keyframes } from "styled-components"
 
-const InfiniteScrolling = keyframes`
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }`;
-
-
 export const Section = styled.section`
-  margin: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 0;
   width: 100%;
-  overflow: hidden;
 `;
 
 export const Text = styled.h4`
@@ -21,24 +15,29 @@ export const Text = styled.h4`
   color: ${props => props.theme.colors.gray};
 `;
 
-export const AnimatedSection = styled.div`
-  display: flex;
-  width: 200%;
-  animation: ${InfiniteScrolling} 60s linear infinite;
-`;
 
 export const List = styled.ul`
+  width: 100%;
   display: flex;
   list-style-type: none;
+  //flex-wrap: wrap;
   align-items: center;
-  padding-left: 0;
+  padding: 3rem;
   margin: 0;
   & .logo-image {
+    filter: grayscale(100%);
     margin: 0 2rem;
     //test
     max-height: 50px;
     object-fit: contain !important;
     //padding: 0 2rem;
+  }
+  @media (max-width: 992px) {
+    padding: 0;
+    flex-wrap: wrap;
+    & .logo-image {
+      width: 75px;
+    }
   }
 `;
 

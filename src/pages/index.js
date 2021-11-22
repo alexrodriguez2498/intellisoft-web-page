@@ -25,7 +25,7 @@ const IndexPage = () => {
         <Logo />
         <Seo title="Home" />
         <BannerOne />
-        <BrandsSectionOne />
+        {/*<BrandsSectionOne />*/}
         <BannerTwo />
         <Services />
         <Portfolio />

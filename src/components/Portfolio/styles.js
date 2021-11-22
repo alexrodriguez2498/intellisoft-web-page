@@ -10,6 +10,7 @@ export const Section = styled.section`
     border: 1px solid ${props => props.theme.colors.blue};
     border-radius: 5px;
     &:hover {
+      transition: background-color ease-in .2s;
       cursor: pointer;
       color:  white;
       background-color:  ${props => props.theme.colors.blue};
@@ -37,6 +38,9 @@ export const Section = styled.section`
        border: 1px solid ${props => props.theme.colors.blue};
        border-radius: 5px;
          &:hover {
+           transition: background-color ease-in .2s;
+           color: ${props => props.theme.colors.blue} !important;
+           background-color:  transparent;
            cursor: pointer;
          }
        } 
