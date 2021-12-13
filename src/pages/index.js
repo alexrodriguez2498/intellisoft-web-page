@@ -17,11 +17,11 @@ import { Portfolio } from "../components/Portfolio"
 import { Logo } from "../components/Loader"
 import { useState, useEffect } from "react"
 
-const IndexPage = () => {
+const IndexPage = ({ location }) => {
   return (
     <section style={{ overflowX: "hidden" }}>
       <NavbarVersionOne />
-      <Layout>
+      <Layout location={location}>
         <Logo />
         <Seo title="Home" />
         <BannerOne />

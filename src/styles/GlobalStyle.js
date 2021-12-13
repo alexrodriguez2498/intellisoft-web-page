@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import "/node_modules/bootstrap/dist/css/bootstrap.min.css"
 
 export const GlobalStyles = createGlobalStyle`
   * {
@@ -17,3 +18,4 @@ export const GlobalStyles = createGlobalStyle`
     -moz-appearance: textfield;
   }
 `;
+

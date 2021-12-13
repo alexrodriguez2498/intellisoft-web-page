@@ -1,12 +1,25 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
 import { Element } from "react-scroll"
 import { ExpertiseCard, Section } from "./styles"
 import { Col, Row } from "reactstrap"
+import { usePrefersReducedMotion } from "../../../hooks"
+import sr from "../../../utils/ssr"
+import { srConfig } from "../../../config"
 
 export const Expertise = () => {
+  const revealContainer = useRef(null);
+  const prefersReducedMotion = usePrefersReducedMotion();
+
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      return;
+    }
+
+    sr.reveal(revealContainer.current, srConfig());
+  }, []);
   return (
     <Element name="testimonies" style={{ padding: "1rem 0" }}>
-      <Section style={{margin: '0 1rem' }}>
+      <Section style={{margin: '0 1rem' }} id='expertise' ref={revealContainer}>
         <h1>Why choose us?</h1>
         <p>
           We are expert offshore software development partner. Sofware development with Intellisoft is beyond a
