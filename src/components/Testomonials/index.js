@@ -1,12 +1,17 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { Col, Container, Row } from "reactstrap"
 import { StaticImage } from "gatsby-plugin-image"
 import { Comment, Scrollable, ScrollableContainer, Section } from "./styles"
 import { Carousel } from '@trendyol-js/react-carousel';
+import { usePrefersReducedMotion } from "../../../hooks"
+import { srConfig } from "../../../config"
+import sr from "../../../utils/ssr"
 
 export const Testimonials = () => {
   const [isMobile, setIsMobile] = useState(null)
   const isBrowser = () => typeof window !== "undefined"
+  const revealContainer = useRef(null);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
     if (isBrowser()) {
@@ -19,8 +24,16 @@ export const Testimonials = () => {
     }
   }, [])
 
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      return;
+    }
+
+    sr.reveal(revealContainer.current, srConfig());
+  }, []);
+
   return (
-    <Section>
+    <Section id='testimonials' ref={revealContainer}>
       {
         !isMobile && (
           <Container style={{ position: "relative" }}>

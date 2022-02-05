@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { Col, Container, Row } from "reactstrap"
 import { Section } from "./styles"
 import { animated, useSpring } from "react-spring"
 import { StaticImage } from "gatsby-plugin-image"
 import { Element } from "react-scroll"
+import { usePrefersReducedMotion } from "../../../hooks"
+import { srConfig } from "../../../config"
+import sr from "../../../utils/ssr"
 
 const services = [
   { text: "Software Development", view: 1 },
@@ -21,6 +24,16 @@ export const Services = () => {
   const [view, setView] = useState(1)
   const [isMobile, setIsMobile] = useState(false)
   const isBrowser = () => typeof window !== "undefined"
+  const revealContainer = useRef(null);
+  const prefersReducedMotion = usePrefersReducedMotion();
+
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      return;
+    }
+
+    sr.reveal(revealContainer.current, srConfig());
+  }, []);
 
   const fade = useSpring({
     to: { opacity: 1 },
@@ -561,7 +574,7 @@ export const Services = () => {
     <Element name="services" style={{ padding: "1rem 0" }}>
       {
         !isMobile && (
-          <Section>
+          <Section id='services' ref={revealContainer}>
             <Container>
               <h1>Our Services</h1>
               <Row>
@@ -586,7 +599,7 @@ export const Services = () => {
       }
       {
         isMobile && (
-          <Section>
+          <Section id='services-mobile' ref={revealContainer}>
             <ul className='special-list'>
               {
                 services.map((service, index) => (

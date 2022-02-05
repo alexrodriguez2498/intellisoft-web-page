@@ -6,39 +6,30 @@
  */
 
 import * as React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-import { NavbarVersionOne } from './Navbar/NavbarVersionOne';
+import { NavbarVersionOne } from "./Navbar/NavbarVersionOne"
 
-import Header from "./header"
 import "./layout.css"
-import { Footer } from "./Footer";
+import { Footer } from "./Footer"
+import Email from "./email"
+import Seo from "./seo"
+import Social from "./social"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+const Layout = ({ children, location }) => {
+  const isHome = location.pathname === "/"
 
   return (
     <>
       {/*<Header siteTitle={data.site.siteMetadata?.title || `Title`} />*/}
+      <Seo />
       <NavbarVersionOne />
-      <div>
+      <div id="root">
+        <Email isHome={isHome} />
+        <Social isHome={isHome} />
         <main>{children}</main>
         <Footer />
       </div>
     </>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout

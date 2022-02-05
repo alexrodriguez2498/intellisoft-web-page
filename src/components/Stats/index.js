@@ -1,9 +1,23 @@
-import React, { useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { Stat, StatContainer } from './styles'
 import { useSpring, config, animated } from "react-spring"
+import { usePrefersReducedMotion } from "../../../hooks"
+import sr from "../../../utils/ssr"
+import { srConfig } from "../../../config"
 
 
 export const Stats = () => {
+  const revealContainer = useRef(null);
+  const prefersReducedMotion = usePrefersReducedMotion();
+
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      return;
+    }
+
+    sr.reveal(revealContainer.current, srConfig());
+  }, []);
+
 
   const days = useSpring({
     from: { number: 0 },
@@ -40,7 +54,7 @@ export const Stats = () => {
   })
 
   return (
-    <StatContainer>
+    <StatContainer id='stats' ref={revealContainer}>
       <Stat>
         <div className={'d-flex'}>
           <animated.h1>{days.number.to(n => n.toFixed(0))}</animated.h1>
